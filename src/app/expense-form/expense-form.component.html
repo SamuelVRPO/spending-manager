@@ -1,8 +1,8 @@
 <!-- src/app/expense-form/expense-form.component.html -->
 <div class="expense-form">
-  <h2>Add New Expense</h2>
+  <h2>Add New Expense / Income</h2>
   <form [formGroup]="expenseForm" (ngSubmit)="onSubmit()">
-    <!-- Group the input fields -->
+    <!-- Use a grid container for the fields -->
     <div class="form-fields">
       <div class="field">
         <label for="merchant">Merchant:</label>
@@ -18,12 +18,7 @@
       </div>
       <div class="field">
         <label for="category">Category:</label>
-        <select id="category" formControlName="category" required>
-          <option value="">Select a category</option>
-          <option *ngFor="let category of categories">
-            {{ category }}
-          </option>
-        </select>
+        <input id="category" type="text" formControlName="category" required />
       </div>
       <div class="field">
         <label for="cardUsed">Card Used:</label>
@@ -42,7 +37,6 @@
         </select>
       </div>
     </div>
-    <!-- Place the submit button below the fields -->
-    <button type="submit" [disabled]="expenseForm.invalid">Add Expense</button>
+    <button type="submit" [disabled]="expenseForm.invalid">Add Record</button>
   </form>
 </div>

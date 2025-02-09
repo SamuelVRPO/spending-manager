@@ -1,0 +1,41 @@
+/* src/app/expense-query/expense-query.component.css */
+.expense-query {
+    background-color: #007bff; /* Blue background */
+    color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    /* Center the form horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .expense-query form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;  /* Space between each control */
+  }
+  
+  .expense-query label {
+    margin-right: 0.3rem;
+    font-size: 0.9rem;
+  }
+  
+  .expense-query input,
+  .expense-query select {
+    padding: 0.3rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    /* Optional: white background so the text is legible */
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Adjust input widths as needed */
+  .expense-query input[type="text"],
+  .expense-query select {
+    min-width: 100px;
+  }
+  

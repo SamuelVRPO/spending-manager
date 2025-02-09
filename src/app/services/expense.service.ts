@@ -2,10 +2,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Expense } from '../models/expense.model';
+import { QueryFilter } from '../models/query-filter.model';
 
 const fs = window.require ? window.require('fs').promises : null;
 const path = window.require ? window.require('path') : null;
-
 const expenseFilePath = (path && window.process) ? path.join(window.process.cwd(), 'expenses.json') : 'expenses.json';
 
 @Injectable({
@@ -60,5 +60,36 @@ export class ExpenseService {
     data.expenses = data.expenses.filter(expense => expense.id !== expenseId);
     await this.writeExpenses(data);
     await this.loadExpenses();
+  }
+
+  queryExpenses(expenses: Expense[], filter: QueryFilter): Expense[] {
+    let filtered = expenses;
+
+    if (filter.type) {
+      filtered = filtered.filter(expense => 
+        expense.type === filter.type);
+    }
+
+    if (filter.category) {
+      filtered = filtered.filter(expense => 
+        expense.category.toLowerCase() === filter.category!.toLowerCase());
+    }
+
+    if (filter.merchant) {
+      filtered = filtered.filter(expense => 
+        expense.merchant.toLowerCase().includes(filter.merchant!.toLowerCase()));
+    }
+
+    if (filter.startDate) {
+      filtered = filtered.filter(expense => 
+        new Date(expense.date) >= filter.startDate!);
+    }
+
+    if (filter.endDate) {
+      filtered = filtered.filter(expense => 
+        new Date(expense.date) <= filter.endDate!);
+    }
+
+    return filtered;
   }
 }

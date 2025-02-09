@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { combineLatest, Subscription } from 'rxjs';
 import { Expense } from '../models/expense.model';
 import { ExpenseService } from '../services/expense.service';
+import { QueryService } from '../services/query.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,11 +16,14 @@ export class ExpenseListComponent implements OnInit, OnDestroy{
   expenses: Expense[] = [];
   private subscription!: Subscription;
 
-  constructor(private expenseService: ExpenseService) {}
+  constructor(private expenseService: ExpenseService, private queryService: QueryService) {}
 
   ngOnInit(): void {
-    this.subscription = this.expenseService.expenses$.subscribe((expenses: Expense[]) => {
-      this.expenses = expenses;
+    this.subscription = combineLatest([
+      this.expenseService.expenses$,
+      this.queryService.queryFilter$
+    ]).subscribe(([expenses, filter]) => {
+      this.expenses = this.expenseService.queryExpenses(expenses, filter);
     });
   }
 

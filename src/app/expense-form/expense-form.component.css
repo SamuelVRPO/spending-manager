@@ -5,28 +5,30 @@
     border: 1px solid var(--border-color);
     border-radius: 6px;
     margin-bottom: 1rem;
-    max-width: 800px; /* Adjust if needed */
+    /* Use a wider max-width to allow fields to spread out horizontally */
+    max-width: 100%;
   }
   
-  /* Flex container to line up all fields horizontally */
+  .expense-form h2 {
+    margin-bottom: 1rem;
+  }
+  
+  /* Use CSS Grid to arrange form fields */
   .form-fields {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;      /* Wrap on smaller screens */
-    gap: 1rem;            /* Space between fields */
-    margin-bottom: 1rem;  /* Space below the row of fields */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
   }
   
-  /* Style for each individual field */
+  /* Each field remains a vertical stack */
   .field {
     display: flex;
     flex-direction: column;
-    flex: 1;               /* Each field takes up equal space */
-    min-width: 150px;      /* Ensure a minimum width for each field */
   }
   
   .field label {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.3rem;
     font-weight: bold;
   }
   
@@ -36,5 +38,22 @@
     border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 1rem;
+  }
+  
+  /* Optional: Style the submit button */
+  button[type="submit"] {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
   }
   

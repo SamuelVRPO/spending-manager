@@ -26,6 +26,9 @@ export class ExpenseFormComponent implements OnInit{
     "Food",
     "Transportation",
     "Subscription",
+    "Income",
+    "Payment",
+    "Care"
   ]
 
   constructor(

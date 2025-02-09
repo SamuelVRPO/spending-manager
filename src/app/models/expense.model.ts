@@ -6,6 +6,6 @@ export interface Expense {
     amount: number;
     date: Date;
     category: string;
-    cardUsed: number;
+    cardUsed: string;
     type: 'income' | 'expense';
 }

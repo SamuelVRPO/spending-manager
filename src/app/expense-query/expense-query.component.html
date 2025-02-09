@@ -1,0 +1,24 @@
+<!-- src/app/expense-query/expense-query.component.html -->
+<div class="expense-query">
+    <form [formGroup]="queryForm">
+      <label for="type">Type:</label>
+      <select id="type" formControlName="type">
+        <option value="">All</option>
+        <option value="expense">Expense</option>
+        <option value="income">Income</option>
+      </select>
+  
+      <label for="category">Category:</label>
+      <input id="category" type="text" formControlName="category" placeholder="Category" />
+  
+      <label for="merchant">Merchant:</label>
+      <input id="merchant" type="text" formControlName="merchant" placeholder="Merchant" />
+  
+      <label for="startDate">Start:</label>
+      <input id="startDate" type="date" formControlName="startDate" />
+  
+      <label for="endDate">End:</label>
+      <input id="endDate" type="date" formControlName="endDate" />
+    </form>
+  </div>
+  
