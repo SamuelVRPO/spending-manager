@@ -41,3 +41,31 @@
     background-color: #0056b3;
   }
   
+  /* In src/styles.css or a dedicated layout CSS file */
+
+/* Container for the two-column layout */
+.main-layout {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  /* Left column for the expense list */
+  .list-container {
+    flex: 0 0 600px; /* Fixed width matching your expense list max-width */
+  }
+  
+  /* Right column for future graphs */
+  .graph-container {
+    flex: 1;         /* Takes the remaining horizontal space */
+    /* Optionally add styling for placeholder appearance */
+    background-color: #f1f1f1;
+    border: 1px dashed #ccc;
+    border-radius: 6px;
+    min-height: 300px; /* Example height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 1.2rem;
+  }
+  

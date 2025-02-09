@@ -1,6 +1,14 @@
 <!-- src/app/app.component.html -->
 <h1>Spending Manager</h1>
 <app-expense-form></app-expense-form>
-<hr />
 <app-expense-query></app-expense-query>
-<app-expense-list></app-expense-list>
+<hr />
+<div class="main-layout">
+  <div class="list-container">
+    <app-expense-list></app-expense-list>
+  </div>
+  <div class="graph-container">
+    <!-- Future graphs will go here -->
+    <p>Graphs will appear here.</p>
+  </div>
+</div>

@@ -1,6 +1,4 @@
-/* src/app/expense-list/expense-list.component.css */
-
-/* Container for the entire expense list */
+/* Container for the expense list */
 .expense-list {
     max-width: 800px;
     margin: 0 auto;
@@ -14,79 +12,76 @@
     margin: 0;
   }
   
-  /* Style for each expense item as a card */
-  /* Ensure each expense item acts as a card */
-.expense-item {
+  /* Each expense card */
+  .expense-item {
     background-color: #fff;
     border: 1px solid #cccccc;
+    border-left-width: 5px; /* Width for color distinction */
     border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
   }
   
+  /* Apply a green left border for income */
   .expense-item.income {
-    border-left: 5px solid #28a745; /* Green */
+    border-left-color: #28a745; /* Green */
   }
   
-  /* Styling for expense items: use a red left border */
+  /* Apply a red left border for expense */
   .expense-item.expense {
-    border-left: 5px solid #dc3545; /* Red */
+    border-left-color: #dc3545; /* Red */
   }
-
-  /* Header styling remains as before */
+  
+  /* Header row: merchant and date */
   .expense-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
     font-weight: bold;
     color: #007bff;
-    /* You can remove extra right padding now, if not needed */
+    font-size: 1rem;
   }
   
-  /* Style the details row as a flex container */
+  /* Details row: amount, category, card used, and delete button */
   .expense-details {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem; /* space between text details and trash icon */
-  }
-  
-  /* Group textual details together */
-  .details-text {
-    display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-  }
-  
-  /* Basic styling for each detail badge */
-  .details-text span {
-    background-color: #f9f9f9;
-    padding: 0.3rem 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #cccccc;
     font-size: 0.9rem;
     color: #333333;
   }
   
-  /* Special styling for the card used badge (optional) */
-  .expense-card {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    font-weight: bold;
+  /* Style each detail as a badge */
+  .expense-details span {
+    background-color: #f9f9f9;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
   }
   
-  /* Delete button styling */
+  /* Optionally, style the card used badge more prominently */
+  .expense-card {
+    background-color: #007bff;
+    color: #333333;
+    border: none;
+    font-weight: bold;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+  }
+  
+  /* Delete button (trash icon) styling */
   .delete-button {
+    margin-left: auto;
     background: none;
     border: none;
     color: #e74c3c;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: transform 0.2s ease;
-    /* Remove absolute positioning so it flows in the flex container */
   }
   
   .delete-button:hover {
