@@ -1,0 +1,40 @@
+/* src/app/expense-form/expense-form.component.css */
+.expense-form {
+    background-color: var(--form-background);
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    max-width: 800px; /* Adjust if needed */
+  }
+  
+  /* Flex container to line up all fields horizontally */
+  .form-fields {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;      /* Wrap on smaller screens */
+    gap: 1rem;            /* Space between fields */
+    margin-bottom: 1rem;  /* Space below the row of fields */
+  }
+  
+  /* Style for each individual field */
+  .field {
+    display: flex;
+    flex-direction: column;
+    flex: 1;               /* Each field takes up equal space */
+    min-width: 150px;      /* Ensure a minimum width for each field */
+  }
+  
+  .field label {
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+  }
+  
+  .field input,
+  .field select {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  

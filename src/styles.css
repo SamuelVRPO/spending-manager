@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+:root {
+    /* Basic, neutral color palette */
+    --background-color: #ffffff; /* White */
+    --text-color: #333333;       /* Dark gray for text */
+    --form-background: #f9f9f9;    /* Very light gray for form backgrounds */
+    --border-color: #cccccc;      /* Light gray for borders */
+    --accent-color: #007bff;      /* A basic blue accent for buttons */
+    --font-family-base: 'Arial', sans-serif;
+  }
+  
+  /* Global resets and base styles */
+  body {
+    margin: 0;
+    padding: 1rem;
+    font-family: var(--font-family-base);
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  h1, h2 {
+    color: var(--text-color);
+  }
+  
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+  }
+  
+  button {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

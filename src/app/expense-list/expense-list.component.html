@@ -1,0 +1,23 @@
+<!-- src/app/expense-list/expense-list.component.html -->
+<div class="expense-list">
+  <h2>Expense List</h2>
+  <ul>
+    <li *ngFor="let expense of expenses" class="expense-item"
+    [ngClass]="{'income': expense.type === 'income', 'expense': expense.type === 'expense'}">
+      <div class="expense-header">
+        <span class="expense-merchant">{{ expense.merchant }}</span>
+        <span class="expense-date">{{ expense.date | date:'shortDate' }}</span>
+      </div>
+      <div class="expense-details">
+        <div class="details-text">
+          <span class="expense-amount">{{ expense.amount | currency }}</span>
+          <span class="expense-category">{{ expense.category }}</span>
+          <span class="expense-card">Card: {{ expense.cardUsed }}</span>
+        </div>
+        <button class="delete-button" (click)="deleteExpense(expense.id)" title="Delete Expense">
+          🗑️
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
